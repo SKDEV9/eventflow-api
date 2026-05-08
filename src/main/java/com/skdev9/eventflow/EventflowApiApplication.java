@@ -1,4 +1,4 @@
-package com.SKDEV9.eventflow_api;
+package com.skdev9.eventflow;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
