@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: eventflow-postgres
+    environment:
+      POSTGRES_DB: eventflow_db
+      POSTGRES_USER: eventflow
+      POSTGRES_PASSWORD: eventflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - eventflow_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  eventflow_postgres_data:
