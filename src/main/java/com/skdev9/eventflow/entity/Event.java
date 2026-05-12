@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Table(name = "events")
 @Getter
 @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor
 public class Event {
 
     @Id
