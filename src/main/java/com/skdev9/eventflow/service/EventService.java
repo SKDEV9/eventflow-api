@@ -4,6 +4,7 @@ import com.skdev9.eventflow.dto.request.CreateEventRequest;
 import com.skdev9.eventflow.dto.response.EventResponse;
 import com.skdev9.eventflow.entity.Event;
 import com.skdev9.eventflow.entity.enums.EventStatus;
+import com.skdev9.eventflow.exception.ResourceNotFoundException;
 import com.skdev9.eventflow.mapper.EventMapper;
 import com.skdev9.eventflow.repository.EventRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -33,7 +34,7 @@ public class EventService {
 
     public EventResponse findEventById(Long id) {
         Event event = eventRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Event not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Event not found with id: " + id));
 
         return eventMapper.toResponse(event);
     }
